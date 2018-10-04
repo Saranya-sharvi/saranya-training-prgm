@@ -1,7 +1,7 @@
 var="1a2b3c"
-string=[],number[]
+string=[""] number=[]
 for out in var:
-	if out is string():
+	if out is.string():
 		string.append(out)
 	else:
 		number.append(out)
