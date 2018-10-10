@@ -1,9 +1,13 @@
+
+
+
+
 """ assign of class"""
-class maths():
+class math():
     """ perform division operation """
 
     def division(a,b):
-        c=a%b
+        c=a/b
         return c
     """ perform addition operation """
 
@@ -23,9 +27,9 @@ b=int(input("enter the value of b:"))
 
     
 ans={}
-ans["division"]=maths.division(a,b)
-ans["addition"]=maths.addition(a,b)
-ans["subtraction"]=maths.subtaction(a,b)
+#ans["division"]=math.division(a,b)
+ans["addition"]=math.addition(a,b)
+ans["subtraction"]=math.subtaction(a,b)
 
 print("result is:",ans)  
     
