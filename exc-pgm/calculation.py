@@ -159,7 +159,7 @@ result["sum_divisible_7"] = sss["sum_div_7"]
 
 #json formate conversion
 
-with open('result.json', 'w')as task:
+with open('saran.json', 'w')as task:
 	
 	json.dump(result,task)
 #result printing
