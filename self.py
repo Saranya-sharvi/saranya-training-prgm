@@ -47,5 +47,11 @@ print("\n", "renu's methods:", "\n")
 renu.answer()
 
 
+"""import sys
+print("This is the name of the script: ", sys.argv[2])
+print("Number of arguments: ", len(sys.argv))
+print("The arguments are: " , str(sys.argv))"""
+
+
 
 	
