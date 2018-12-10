@@ -5,7 +5,7 @@ import requests
 inp=requests.get("https://pubs.acs.org/doi/pdf/10.1021/acs.jctc.8b00280")
 soup=BeautifulSoup(inp.content, "lxml")
 #print(source)
-x=soup.find('title')
+"""x=soup.find('title')
 y=soup.find("div",attrs={"id":"doi"})
 z=soup.find("p",attrs={"class":"articleBody_abstractText"})
 
@@ -41,9 +41,11 @@ print("Date_Received and Date_Published: ", s.get_text())
 
 
 
+"""
 
 
-
+a=soup.find("div",attrs={'id':'articleMeta'}
+print(a.get_text())
 
 
 

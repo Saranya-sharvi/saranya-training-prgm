@@ -1,4 +1,4 @@
-string=raw_input("Enter input:")
+"""string=raw_input("Enter input:")
 count1=0
 count2=0
 count3=0
@@ -13,7 +13,10 @@ print(count1)
 print("the number of char is:")
 print(count2)
 print("the number of str is:")
-print(count3) 
- 
+print(count3) """
+
+
+
+
 	
 	
