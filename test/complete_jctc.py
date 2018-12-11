@@ -6,42 +6,55 @@ class Jctc:
 
 	def title(soup):
 		x=soup.find('title')
-		return x.get_text()
+		x1=x.get_text()
+		#print(x1)
+		return x1
 		
 	def doi(soup):
 		y=soup.find("div",attrs={"id":"doi"})
-		return y.get_text()
+		y1=y.get_text()
+		#print(y1)
+		return y1
 		
 	def abstract(soup):
-		z=soup.find("p",attrs={"class":"articleBody_abstractText"})		
-		return z.get_text()
+		z=soup.find("p",attrs={"class":"articleBody_abstractText"})	
+		z1=z.get_text()	
+		#print(z1)
+		return z1
 
 	def access(soup):
 		at=access=soup.find("a",attrs={"class":"expander openaccess"})
-		return at.get_text()
+		at1=at.get_text()
+		#print(at1)
+		return at1
 		
 	def html(soup):
 		hurl="https://pubs.acs.org/doi/full/10.1021/acs.jctc.8b00280"
+		#print(hurl)
 		return hurl
 		
 		
 	def current_issue(soup):
 		curiss="https://pubs.acs.org/toc/jctcce/current"
+		print(curiss)
 		return curiss
 		
 	def date_ofissue(soup):											
 		s=soup.find("div",attrs={"id":"764a4ee4-9265-43f8-8a38-36480fcd64fa"})	
+		s1=s.get_text()	
+		#print(s1)
 		#for date in s:
 		#	if (s.get_text()) != '\n':
-		return s.get_text()		
+		return s1
 			
 	def pub_type(soup):
 		p=soup.find("div",attrs={"class":"manuscriptType"})	
+		p1=p.get_text()
 		
 	#	for info in p:
 	#		if (p.get_text()) != "\n":
-
-		return p.get_text()
+		#print(p1)
+		return p1
 		
 	def auth(soup):
 		authors_list=[]
@@ -152,25 +165,7 @@ class Jctc:
 		#print(auth_inst_list)			
 		return auth_inst_list	
 		
-		
-"""inp=requests.get("https://pubs.acs.org/doi/pdf/10.1021/acs.jctc.8b00280")	
-#print(inp.content)	
-def out(inp):
-	soup=BeautifulSoup(inp.content, "lxml")
-	#print(soup)
-	ans = {}
-	ans['auth'] = crawel.auth(soup)
-	ans['institution'] = crawel.institution(soup)
-	#print(ans)
-	out_json = crawel.auth_inst(soup)
-	print(out_json)
 
-	with open('parse.json', 'w')as jctc:
-		json.dump(out_json, jctc)	
-	
-	
-out(inp)	"""
-		
 	
 inp=requests.get("https://pubs.acs.org/doi/pdf/10.1021/acs.jctc.8b00280")		
 		
@@ -190,12 +185,15 @@ def Jctc_out(inp):
 	crawel['institute'] = Jctc.institution(soup)
 	crawel['auth_inst'] = Jctc.auth_inst(soup)
 	crawel['issue_date'] = Jctc.date_ofissue(soup)
-	out_json = Jctc_out(inp)
-	print(out_json)
-	return crawel
+	
+	
+	print(crawel)
 	with open('jctcsite.json', 'w')as jctc:
-		json.dump(out_json, jctc) 
-Jctc_out(inp)		
+		json.dump(crawel, jctc) 
+
+Jctc_out(inp)	
+	
 		
 
+		
 
